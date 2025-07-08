@@ -104,7 +104,7 @@ function App() {
   ];
 
   const handleDownload = () => {
-    window.open("https://www.dropbox.com/scl/fi/sikxfx7cefo39hwv8etlb/DespensaGO-app.apk?rlkey=xka5yg2wof52iojh0vmaa3h31&e=6&st=zc266lm7&dl=1", "_blank");
+    window.open("https://www.dropbox.com/scl/fi/sikxfx7cefo39hwv8etlb/DespensaGO-app.apk?rlkey=xka5yg2wof52iojh0vmaa3h31&dl=1", "_blank");
     scrollToDownload();
   };
 
@@ -767,13 +767,15 @@ function App() {
             Únete a miles de familias que ya disfrutan de una gestión inteligente de su hogar
           </p>
           <div className="flex justify-center">
-            <button
-              onClick={handleDownload}
+            <a
+              href="https://www.dropbox.com/scl/fi/sikxfx7cefo39hwv8etlb/DespensaGO-app.apk?rlkey=xka5yg2wof52iojh0vmaa3h31&dl=1"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white text-[#7CA98D] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-110 flex items-center justify-center bounce-in ripple-effect glow-effect shadow-2xl"
             >
               <Smartphone className="w-5 h-5 mr-2 rotate-on-hover" />
               Descargar para Android
-            </button>
+            </a>
           </div>
           <div className="mt-8 flex items-center justify-center space-x-4 text-white/80 animate-on-scroll delay-200">
             <Shield className="w-5 h-5 rotate-on-hover" />
