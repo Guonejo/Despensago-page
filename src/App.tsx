@@ -104,7 +104,20 @@ function App() {
   ];
 
   const handleDownload = () => {
-    window.open('https://play.google.com/store', '_blank');
+    // Crear un enlace temporal para descargar la APK
+    const link = document.createElement('a');
+    link.href = '/apk/DespensaGO-app.apk';
+    link.download = 'DespensaGO-app.apk';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const scrollToDownload = () => {
+    const downloadSection = document.querySelector('#download-section');
+    if (downloadSection) {
+      downloadSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -509,7 +522,7 @@ function App() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
-                  onClick={handleDownload}
+                  onClick={scrollToDownload}
                   className="bg-gradient-to-r from-[#7CA98D] to-[#6a9179] text-white px-8 py-4 rounded-full font-semibold hover:from-[#6a9179] hover:to-[#5a7f69] transition-all transform hover:scale-110 flex items-center justify-center ripple-effect glow-effect shadow-xl"
                 >
                   Comenzar ahora
@@ -749,7 +762,7 @@ function App() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-gradient-to-br from-[#7CA98D] to-[#6a9179] py-20 animate-on-scroll relative overflow-hidden">
+      <section id="download-section" className="bg-gradient-to-br from-[#7CA98D] to-[#6a9179] py-20 animate-on-scroll relative overflow-hidden">
         <div className="parallax-bg absolute inset-0 morphing-blob bg-gradient-to-br from-white/10 to-transparent"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 bounce-in">
@@ -777,48 +790,19 @@ function App() {
       {/* Footer */}
       <footer className="bg-gradient-to-br from-[#3E4C59] to-[#2a3441] py-12 animate-on-scroll">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="md:col-span-2 animate-on-scroll">
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-[#7CA98D] to-[#6a9179] rounded-lg flex items-center justify-center glow-effect">
-                  <ShoppingCart className="w-5 h-5 text-white rotate-on-hover" />
-                </div>
-                <span className="text-2xl font-bold text-white">DespensaGO</span>
+          <div className="text-center">
+            <div className="flex items-center justify-center space-x-2 mb-4">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#7CA98D] to-[#6a9179] rounded-lg flex items-center justify-center glow-effect">
+                <ShoppingCart className="w-5 h-5 text-white rotate-on-hover" />
               </div>
-              <p className="text-white/70 mb-4 max-w-md">
-                La aplicación que transforma la gestión de tu despensa con inteligencia artificial y colaboración familiar.
-              </p>
-              <div className="flex space-x-4 slide-up-stagger">
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all cursor-pointer hover:scale-110 magnetic-hover card-tilt" style={{'--stagger': 0} as React.CSSProperties}>
-                  <span className="text-white text-sm">f</span>
-                </div>
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all cursor-pointer hover:scale-110 magnetic-hover card-tilt" style={{'--stagger': 1} as React.CSSProperties}>
-                  <span className="text-white text-sm">t</span>
-                </div>
-                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-all cursor-pointer hover:scale-110 magnetic-hover card-tilt" style={{'--stagger': 2} as React.CSSProperties}>
-                  <span className="text-white text-sm">in</span>
-                </div>
-              </div>
+              <span className="text-2xl font-bold text-white">DespensaGO</span>
             </div>
-            <div className="animate-on-scroll delay-100">
-              <h4 className="text-white font-semibold mb-4">Producto</h4>
-              <ul className="space-y-2 text-white/70 slide-up-stagger">
-                <li style={{'--stagger': 0} as React.CSSProperties}><a href="#" className="hover:text-white transition-colors hover:scale-105 magnetic-hover">Características</a></li>
-                <li style={{'--stagger': 1} as React.CSSProperties}><a href="#" className="hover:text-white transition-colors hover:scale-105 magnetic-hover">Precios</a></li>
-                <li style={{'--stagger': 2} as React.CSSProperties}><a href="#" className="hover:text-white transition-colors hover:scale-105 magnetic-hover">Actualizaciones</a></li>
-              </ul>
-            </div>
-            <div className="animate-on-scroll delay-200">
-              <h4 className="text-white font-semibold mb-4">Soporte</h4>
-              <ul className="space-y-2 text-white/70 slide-up-stagger">
-                <li style={{'--stagger': 0} as React.CSSProperties}><a href="#" className="hover:text-white transition-colors hover:scale-105 magnetic-hover">Centro de ayuda</a></li>
-                <li style={{'--stagger': 1} as React.CSSProperties}><a href="#" className="hover:text-white transition-colors hover:scale-105 magnetic-hover">Contacto</a></li>
-                <li style={{'--stagger': 2} as React.CSSProperties}><a href="#" className="hover:text-white transition-colors hover:scale-105 magnetic-hover">Privacidad</a></li>
-              </ul>
-            </div>
+            <p className="text-white/70 mb-4 max-w-md mx-auto">
+              La aplicación que transforma la gestión de tu despensa con inteligencia artificial y colaboración familiar.
+            </p>
           </div>
           <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/70 animate-on-scroll delay-300">
-            <p>&copy; 2024 DespensaGO. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} DespensaGO. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
