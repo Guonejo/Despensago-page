@@ -122,7 +122,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-[#F2F7FA] overflow-x-hidden">
-      <style jsx>{`
+      <style>{`
         .animate-on-scroll {
           opacity: 0;
           transform: translateY(50px);
