@@ -112,7 +112,7 @@ function App() {
     const downloadSection = document.querySelector('#download-section');
     if (downloadSection) {
       downloadSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    }x
   };
 
   return (
