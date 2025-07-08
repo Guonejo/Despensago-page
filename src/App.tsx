@@ -104,7 +104,7 @@ function App() {
   ];
 
   const handleDownload = () => {
-    window.open("https://www.dropbox.com/scl/fi/sikxfx7cefo39hwv8etlb/DespensaGO-app.apk?rlkey=xka5yg2wof52iojh0vmaa3h31&e=6&st=zc266lm7&dl=1", "_blank");
+    window.open("   https://drive.google.com/uc?export=download&id=1-dOitI1BRVQ8stD2LFF-yVl7-uL9Wklf", "_blank");
     scrollToDownload(); 
   };
 
@@ -768,7 +768,7 @@ function App() {
           </p>
           <div className="flex justify-center">
             <a
-              href="https://www.dropbox.com/scl/fi/sikxfx7cefo39hwv8etlb/DespensaGO-app.apk?rlkey=xka5yg2wof52iojh0vmaa3h31&st=798ie5lv&dl=1"
+              href="https://drive.google.com/uc?export=download&id=1-dOitI1BRVQ8stD2LFF-yVl7-uL9Wklf"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-[#7CA98D] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-all transform hover:scale-110 flex items-center justify-center bounce-in ripple-effect glow-effect shadow-2xl"
