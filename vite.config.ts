@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/Despensago-page/', // ← agrega esta línea
   plugins: [react()],
   optimizeDeps: {
     exclude: ['lucide-react'],
